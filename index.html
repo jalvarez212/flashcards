@@ -22,6 +22,26 @@
 </head>
 
 <body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading speech recognition model...</p>
+            <p class="loading-subtext">This may take 10-30 seconds on first load</p>
+        </div>
+    </div>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay" class="success-overlay">
+        <div class="success-content">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
+            <p>Perfect!</p>
+        </div>
+    </div>
+
     <div class="app-container">
         <header>
             <h1>French Flashcards</h1>
@@ -52,6 +72,13 @@
             </div>
         </div>
 
+        <!-- Transcription Status Indicator -->
+        <div id="transcription-status" class="transcription-status">
+            <div class="status-dot"></div>
+            <span id="status-text">Ready</span>
+            <span id="transcribed-text" class="transcribed-text"></span>
+        </div>
+
         <div class="controls-container">
             <div class="nav-controls">
                 <button id="prev-btn" class="nav-btn" aria-label="Previous Word">
@@ -68,6 +95,29 @@
                 </button>
             </div>
 
+            <button id="mic-btn" class="mic-btn" title="Toggle Speech Recognition">
+                <div class="mic-btn-content">
+                    <svg class="mic-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                        <line x1="12" y1="19" x2="12" y2="23"></line>
+                        <line x1="8" y1="23" x2="16" y2="23"></line>
+                    </svg>
+                    <span>Speech Recognition</span>
+                    <div class="audio-waves">
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                        <div class="wave-bar"></div>
+                    </div>
+                </div>
+                <div class="toggle-switch">
+                    <div class="toggle-slider"></div>
+                </div>
+            </button>
+
             <button id="new-session-btn" class="session-btn" title="Start New Session">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -79,7 +129,7 @@
     </div>
 
     <script src="words.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
