@@ -1,5 +1,5 @@
-// Import Transformers.js
-import { pipeline, env } from './node_modules/@xenova/transformers/dist/transformers.min.js';
+// Import Transformers.js from CDN (works on GitHub Pages)
+import { pipeline, env } from 'https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2';
 
 // Configure Transformers.js to use local models
 env.allowLocalModels = false;
