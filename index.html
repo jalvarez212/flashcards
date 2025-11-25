@@ -32,11 +32,13 @@
             <div class="card" id="flashcard">
                 <div class="card-face card-front">
                     <span class="category-tag" id="category-front">Noun</span>
+                    <span class="progress-indicator" id="progress-front">1/10</span>
                     <h2 id="word-front">Apple</h2>
                     <p class="hint">Click to flip</p>
                 </div>
                 <div class="card-face card-back">
                     <span class="category-tag" id="category-back">Noun</span>
+                    <span class="progress-indicator" id="progress-back">1/10</span>
                     <h2 id="word-back">Pomme</h2>
                     <div class="audio-indicator">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -50,18 +52,28 @@
             </div>
         </div>
 
-        <div class="controls">
-            <button id="prev-btn" class="nav-btn" aria-label="Previous Word">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        <div class="controls-container">
+            <div class="nav-controls">
+                <button id="prev-btn" class="nav-btn" aria-label="Previous Word">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="nav-btn" aria-label="Next Word">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18l6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+
+            <button id="new-session-btn" class="session-btn" title="Start New Session">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M15 18l-6-6 6-6" />
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3" />
                 </svg>
-            </button>
-            <button id="next-btn" class="nav-btn" aria-label="Next Word">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
+                <span>Shuffle New Set</span>
             </button>
         </div>
     </div>

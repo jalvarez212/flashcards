@@ -37,7 +37,7 @@ body {
 header {
     margin-bottom: 3rem;
     color: white;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
@@ -92,7 +92,8 @@ header p {
 
 .card-back {
     transform: rotateY(180deg);
-    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque for readability */
+    background: rgba(255, 255, 255, 0.95);
+    /* Slightly more opaque for readability */
 }
 
 .category-tag {
@@ -106,6 +107,19 @@ header p {
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.progress-indicator {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 1px;
 }
 
@@ -140,13 +154,28 @@ h2 {
 }
 
 @keyframes pulse {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
 }
 
 /* Controls */
-.controls {
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-controls {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -171,10 +200,38 @@ h2 {
     background: white;
     color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .nav-btn:active {
+    transform: translateY(0);
+}
+
+.session-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.session-btn:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.session-btn:active {
     transform: translateY(0);
 }
 
@@ -183,6 +240,7 @@ h2 {
     .scene {
         height: 300px;
     }
+
     h2 {
         font-size: 2.5rem;
     }
